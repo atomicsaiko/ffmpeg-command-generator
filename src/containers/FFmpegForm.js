@@ -28,7 +28,8 @@ class FFmpegForm extends Component {
   }
 
   generateFFmpegCMD = () => {
-    const { input, resolution, framerate, videocodec } = this.state
+    const { input, framerate, videocodec } = this.state
+    const { resolution } = this.props
 
     // Preprocess input to splice the file extension from path
 
