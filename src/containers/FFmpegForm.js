@@ -19,14 +19,6 @@ class FFmpegForm extends Component {
     }
   }
 
-  handleChange = (event) => {
-    console.log("handleChange() returns: ", event)
-  }
-
-  myCallback = (dataFromChild) => {
-    this.setState({ resolution: dataFromChild })
-  }
-
   generateFFmpegCMD = () => {
     const { input, framerate, videocodec } = this.state
     const { resolution } = this.props
@@ -49,7 +41,7 @@ class FFmpegForm extends Component {
     return (
       <div>
         <FileInput />
-        <Resolution resolution={this.myCallback}>
+        <Resolution>
           <option value='640x360'>640x360</option>
         </Resolution>
         <FrameRate />

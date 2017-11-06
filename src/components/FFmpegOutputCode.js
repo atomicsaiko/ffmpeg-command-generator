@@ -19,7 +19,9 @@ class FFmpegOutputCommand extends Component {
           type='text'
           style={styles.input}
           value={this.props.command}
-          placeholder={`ffmpeg -i "input.mov" "output.mxf"`} />
+          readOnly
+          placeholder={`ffmpeg -i "input.mov" "output.mxf"`}
+         />
       </div>
     )
   }
