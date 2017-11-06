@@ -12,16 +12,12 @@ class FFmpegForm extends Component {
 
     this.state = {
       input: 'ProRes_Master.mov',
-      resolution: '1920x1080',
-      framerate: '25',
-      videocodec: 'libx264',
-      temp: ''
     }
   }
 
   generateFFmpegCMD = () => {
-    const { input, framerate, videocodec } = this.state
-    const { resolution } = this.props
+    const { input } = this.state
+    const { resolution, framerate, videocodec } = this.props
 
     // Preprocess input to splice the file extension from path
 
@@ -52,6 +48,10 @@ class FFmpegForm extends Component {
   }
 }
 
-const mapStateToProps = ({ resolution }) => ({ resolution })
+const mapStateToProps = ({ resolution, framerate, videocodec }) => ({
+  resolution,
+  framerate,
+  videocodec
+})
 
 export default connect(mapStateToProps)(FFmpegForm)
