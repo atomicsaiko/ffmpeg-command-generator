@@ -6,6 +6,7 @@ class FFmpegOutputCommand extends Component {
       textarea: {
         fontFamily: 'monospace',
         fontSize: '1em',
+        padding: '1em',
         width: 480,
         height: 160
       }

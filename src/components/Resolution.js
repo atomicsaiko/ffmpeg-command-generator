@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
 import { connect } from 'react-redux'
 import updateResolution from '../actions/resolution/update'
 
@@ -22,6 +23,7 @@ class Resolution extends Component {
           <option value='768x432'>768x432</option>
           {this.props.children}
         </select>
+        <FontAwesome name='info-circle' />
       </div>
     )
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
 import { connect } from 'react-redux'
 import updateFrameRate from '../actions/framerate/update'
 
@@ -22,6 +23,7 @@ class FrameRate extends Component {
           <option value='24'>24 fps</option>
           <option value='23.976'>23.976 fps</option>
         </select>
+        <FontAwesome name='info-circle' />
         {this.props.children}
       </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
 import { connect } from 'react-redux'
 import updateFileInput from '../actions/fileinput/update'
 
