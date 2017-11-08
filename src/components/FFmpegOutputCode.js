@@ -43,6 +43,7 @@ class FFmpegOutputCommand extends Component {
             cols='50'
             style={styles.textarea}
             value={this.props.command}
+            readOnly
             placeholder={`ffmpeg -i "input.mov" "output.mxf"`}>
           </textarea>
           <CopyToClipboard text={this.props.command}>
