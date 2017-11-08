@@ -3,10 +3,20 @@ import { connect } from 'react-redux'
 import updateFileInput from '../actions/fileinput/update'
 
 class FileInput extends Component {
+
   handleChange = (event) => {
     const { updateFileInput } = this.props
-    console.log('The event object: ', event.target.value)
-    updateFileInput(event.target.value)
+    updateFileInput(this.validateFileInput(event.target.value))
+  }
+
+  validateFileInput = (fileinput) => {
+    if (fileinput.search('/') !== -1) {
+      let filename = fileinput.split('/')
+      return filename[filename.length-1]
+    } else {
+      let filename = fileinput.split('\\')
+      return filename[filename.length-1]
+    }
   }
 
   render() {

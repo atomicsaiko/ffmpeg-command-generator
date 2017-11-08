@@ -13,11 +13,11 @@ class FFmpegForm extends Component {
 
     let baseCMD = [
       'ffmpeg',
-      '-i', `"${this.validateFileInput(fileinput)}"`,
+      '-i', `"${fileinput}"`,
       '-s', resolution,
       '-r', framerate,
       '-c:v', videocodec,
-      `"ENC_${this.validateFileInput(fileinput)}"`
+      `"ENC_${fileinput}"`
     ]
 
     return baseCMD.join(' ')
