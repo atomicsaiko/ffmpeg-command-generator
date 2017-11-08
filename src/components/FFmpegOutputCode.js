@@ -1,7 +1,23 @@
 import React, { Component } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import AlertContainer from 'react-alert'
 
 class FFmpegOutputCommand extends Component {
+
+  alertOptions = {
+    offset: 14,
+    position: 'bottom right',
+    theme: 'dark',
+    time: 2000,
+    transition: 'fade'
+  }
+
+  showCopyAlert = () => {
+    this.msg.show('Copied', {
+      type: 'success'
+    })
+  }
+
   render() {
     const HEX_WHITE = '#EBEBEB'
 
@@ -29,7 +45,10 @@ class FFmpegOutputCommand extends Component {
             placeholder={`ffmpeg -i "input.mov" "output.mxf"`}>
           </textarea>
           <CopyToClipboard text={this.props.command}>
-            <button>Copy</button>
+            <div>
+              <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+              <button onClick={this.showCopyAlert}>Copy</button>
+            </div>
           </CopyToClipboard>
          <p>Download FFmpeg binary <a href='http://ffmpeg.org/download.html'>here</a>.</p>
       </div>
