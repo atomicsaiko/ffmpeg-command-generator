@@ -11,18 +11,26 @@ class FFmpegForm extends Component {
   generateFFmpegCMD = () => {
     const { fileinput, resolution, framerate, videocodec } = this.props
 
-    // Preprocess input to splice the file extension from path
-
     let baseCMD = [
       'ffmpeg',
-      '-i', `"${fileinput}"`,
+      '-i', `"${this.validateFileInput(fileinput)}"`,
       '-s', resolution,
       '-r', framerate,
       '-c:v', videocodec,
-      `"ENC_${fileinput}"`
+      `"ENC_${this.validateFileInput(fileinput)}"`
     ]
 
     return baseCMD.join(' ')
+  }
+
+  validateFileInput = (fileinput) => {
+    if (fileinput.search('/') !== -1) {
+      let filename = fileinput.split('/')
+      return filename[filename.length-1]
+    } else {
+      let filename = fileinput.split('\\')
+      return filename[filename.length-1]
+    }
   }
 
   render() {
