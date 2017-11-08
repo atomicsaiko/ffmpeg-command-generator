@@ -51,7 +51,12 @@ class FFmpegOutputCommand extends Component {
               <button onClick={this.showCopyAlert}>Copy</button>
             </div>
           </CopyToClipboard>
-        <p>Download FFmpeg binary <a href='http://ffmpeg.org/download.html'>here</a>.</p>
+        <p>
+          Download FFmpeg binary <a
+            href='http://ffmpeg.org/download.html'
+            target='_blank'
+            rel='noopener noreferrer'>here</a>.
+        </p>
       </div>
     )
   }
