@@ -7,27 +7,19 @@ import VideoCodec from '../components/VideoCodec'
 import FFmpegOutputCommand from '../components/FFmpegOutputCode'
 
 class FFmpegForm extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      input: 'ProRes_Master.mov',
-    }
-  }
 
   generateFFmpegCMD = () => {
-    const { input } = this.state
-    const { resolution, framerate, videocodec } = this.props
+    const { fileinput, resolution, framerate, videocodec } = this.props
 
     // Preprocess input to splice the file extension from path
 
     let baseCMD = [
       'ffmpeg',
-      '-i', input,
+      '-i', fileinput,
       '-s', resolution,
       '-r', framerate,
       '-c:v', videocodec,
-      `ENC_${input}`
+      `ENC_${fileinput}`
     ]
 
     return baseCMD.join(' ')
@@ -48,7 +40,8 @@ class FFmpegForm extends Component {
   }
 }
 
-const mapStateToProps = ({ resolution, framerate, videocodec }) => ({
+const mapStateToProps = ({ fileinput, resolution, framerate, videocodec }) => ({
+  fileinput,
   resolution,
   framerate,
   videocodec
