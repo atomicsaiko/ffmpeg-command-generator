@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateFileInput from '../actions/fileinput/update'
 
@@ -21,6 +22,8 @@ class FileInput extends Component {
   }
 
   render() {
+    const TOOLTIP = 'Supported containers are MOV/MXF/MP4'
+
     return (
       <div>
         <label htmlFor='fileId'>Choose media file to inspect: {'\xa0'}</label>
@@ -31,7 +34,8 @@ class FileInput extends Component {
           accept='.mov, .mxf, .mp4'
           onChange={this.handleChange}
         />
-        <FontAwesome name='info-circle' />
+        <FontAwesome name='info-circle' data-tip={TOOLTIP}/>
+        <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
       </div>
     )
   }

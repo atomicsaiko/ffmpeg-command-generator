@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
+import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateResolution from '../actions/resolution/update'
 
@@ -12,6 +13,7 @@ class Resolution extends Component {
 
   render() {
     const { resolution } = this.props
+    const TOOLTIP = 'Set output resolution in pixels.<br> For increased coding efficiency a mod16 resolution is preferred.'
 
     return (
       <div>
@@ -23,7 +25,8 @@ class Resolution extends Component {
           <option value='768x432'>768x432</option>
           {this.props.children}
         </select>
-        <FontAwesome name='info-circle' />
+        <FontAwesome name='info-circle' data-tip={TOOLTIP} />
+        <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
       </div>
     )
   }
