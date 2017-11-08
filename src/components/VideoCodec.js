@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
 import { connect } from 'react-redux'
 import updateVideoCodec from '../actions/videocodec/update'
 
@@ -22,6 +23,7 @@ class VideoCodec extends Component {
           <option value='proreshq'>Apple ProRes HQ 422</option>
           <option value='xdcamhd'>XDCAM HD422</option>
         </select>
+        <FontAwesome name='info-circle' />
         {this.props.children}
       </div>
     )

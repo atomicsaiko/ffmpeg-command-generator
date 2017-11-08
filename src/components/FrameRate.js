@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import FontAwesome from 'react-fontawesome'
+import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateFrameRate from '../actions/framerate/update'
 
@@ -11,6 +13,7 @@ class FrameRate extends Component {
 
   render() {
     const { framerate } = this.props
+    const TOOLTIP = 'Set the output frame rate.<br> Note that this will perform frame rate conversion if source frame rate differs.'
 
     return (
       <div>
@@ -22,6 +25,8 @@ class FrameRate extends Component {
           <option value='24'>24 fps</option>
           <option value='23.976'>23.976 fps</option>
         </select>
+        <FontAwesome name='info-circle' data-tip={TOOLTIP}/>
+        <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
         {this.props.children}
       </div>
     )

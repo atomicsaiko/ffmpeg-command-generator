@@ -6,6 +6,7 @@ class FFmpegOutputCommand extends Component {
       textarea: {
         fontFamily: 'monospace',
         fontSize: '1em',
+        padding: '1em',
         width: 480,
         height: 160
       }
@@ -19,6 +20,7 @@ class FFmpegOutputCommand extends Component {
            cols='50'
            style={styles.textarea}
            value={this.props.command}
+           readOnly
            placeholder={`ffmpeg -i "input.mov" "output.mxf"`}>
          </textarea>
          <p>Download FFmpeg binary <a href='http://ffmpeg.org/download.html'>here</a>.</p>
