@@ -29,6 +29,7 @@ class FFmpegOutputCommand extends Component {
         backgroundColor: 'black',
         color: HEX_WHITE,
         resize: 'none',
+        padding: '1em',
         width: 480,
         height: 80
       }
@@ -50,7 +51,7 @@ class FFmpegOutputCommand extends Component {
               <button onClick={this.showCopyAlert}>Copy</button>
             </div>
           </CopyToClipboard>
-         <p>Download FFmpeg binary <a href='http://ffmpeg.org/download.html'>here</a>.</p>
+        <p>Download FFmpeg binary <a href='http://ffmpeg.org/download.html'>here</a>.</p>
       </div>
     )
   }
