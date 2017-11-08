@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class FFmpegOutputCommand extends Component {
   render() {
     const styles = {
-      input: {
+      textarea: {
+        fontFamily: 'monospace',
+        fontSize: '1em',
         width: 480,
         height: 160
       }
@@ -12,16 +14,13 @@ class FFmpegOutputCommand extends Component {
     return (
       <div>
         <p>FFmpeg generated command line to run: </p>
-        <label htmlFor='output' />
-        <input
-          id='output'
-          name='output'
-          type='text'
-          style={styles.input}
-          value={this.props.command}
-          readOnly
-          placeholder={`ffmpeg -i "input.mov" "output.mxf"`}
-         />
+         <textarea
+           rows='4'
+           cols='50'
+           style={styles.textarea}
+           value={this.props.command}
+           placeholder={`ffmpeg -i "input.mov" "output.mxf"`}>
+         </textarea>
       </div>
     )
   }
