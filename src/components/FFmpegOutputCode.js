@@ -3,12 +3,18 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class FFmpegOutputCommand extends Component {
   render() {
+    const HEX_WHITE = '#EBEBEB'
+
     const styles = {
       textarea: {
         fontFamily: 'monospace',
         fontSize: '1em',
+        fontWeight: 'bold',
+        backgroundColor: 'black',
+        color: HEX_WHITE,
+        resize: 'none',
         width: 480,
-        height: 160
+        height: 80
       }
     }
 
