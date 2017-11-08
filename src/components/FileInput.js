@@ -31,6 +31,7 @@ class FileInput extends Component {
           accept='.mov, .mxf, .mp4'
           onChange={this.handleChange}
         />
+        <FontAwesome name='info-circle' />
       </div>
     )
   }
