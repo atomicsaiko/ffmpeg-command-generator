@@ -26,6 +26,7 @@ class FFmpegOutputCommand extends Component {
         fontFamily: 'monospace',
         fontSize: '1em',
         fontWeight: 'bold',
+        borderRadius: 6,
         backgroundColor: 'black',
         color: HEX_WHITE,
         resize: 'none',
