@@ -20,10 +20,10 @@ class FrameRate extends Component {
         Frame rate: {'\xa0'}
         <select id='framerate' onChange={this.handleChange} value={framerate}>
           <option label=' '></option>
-          <option value='29.97'>29.970 fps</option>
+          <option value='30000/1001'>29.970 fps</option>
           <option value='25'>25 fps</option>
           <option value='24'>24 fps</option>
-          <option value='23.976'>23.976 fps</option>
+          <option value='24000/1001'>23.976 fps</option>
         </select>
         <FontAwesome name='info-circle' data-tip={TOOLTIP}/>
         <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
