@@ -32,7 +32,8 @@ class FFmpegOutputCommand extends Component {
         resize: 'none',
         padding: '1em',
         width: 480,
-        height: 80
+        height: 80,
+        outline: 'none'
       }
     }
 
