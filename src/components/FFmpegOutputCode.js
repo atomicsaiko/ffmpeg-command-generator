@@ -13,7 +13,13 @@ class FFmpegOutputCommand extends Component {
   }
 
   showCopyAlert = () => {
-    this.msg.show('Copied', {
+    this.msg.show('FFmpeg command line copied to clipboard', {
+      type: 'success'
+    })
+  }
+
+  showEmailAlert = (dummy) => {
+    this.msg.show(`Email send to dummy@dummy.org`, {
       type: 'success'
     })
   }
