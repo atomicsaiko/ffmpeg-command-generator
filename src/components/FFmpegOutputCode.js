@@ -57,15 +57,15 @@ class FFmpegOutputCommand extends Component {
           <CopyToClipboard text={this.props.command}>
             <div>
               <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
-              <button onClick={this.showCopyAlert}>Copy</button>
+              <button onClick={this.showCopyAlert} style={styles.button}>Copy</button>
+              <button onClick={this.showEmailAlert} style={styles.button}>Email instruction</button>
+              <a
+                href='http://ffmpeg.org/download.html'
+                target='_blank'
+                rel='noopener noreferrer'
+                style={styles.button}>Download FFmpeg</a>
             </div>
           </CopyToClipboard>
-        <p>
-          Download FFmpeg binary <a
-            href='http://ffmpeg.org/download.html'
-            target='_blank'
-            rel='noopener noreferrer'>here</a>.
-        </p>
       </div>
     )
   }
