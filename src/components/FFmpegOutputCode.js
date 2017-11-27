@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import AlertContainer from 'react-alert'
+import Textarea from 'react-textarea-autosize'
 
 class FFmpegOutputCommand extends Component {
 
@@ -32,7 +33,6 @@ class FFmpegOutputCommand extends Component {
         resize: 'none',
         padding: '1em',
         width: 480,
-        height: 80,
         outline: 'none'
       }
     }
@@ -40,14 +40,14 @@ class FFmpegOutputCommand extends Component {
     return (
       <div>
         <p>FFmpeg generated command line to run: </p>
-          <textarea
+          <Textarea
             rows='4'
             cols='50'
             style={styles.textarea}
             value={this.props.command}
             readOnly
             placeholder={`ffmpeg -i "input.mov" "output.mxf"`}>
-          </textarea>
+          </Textarea>
           <CopyToClipboard text={this.props.command}>
             <div>
               <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
