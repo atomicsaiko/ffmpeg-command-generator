@@ -40,6 +40,20 @@ class FFmpegOutputCommand extends Component {
         width: 480,
         height: 80,
         outline: 'none'
+      },
+      button: {
+        margin: '1em 0.5em',
+        backgroundColor: 'white',
+        border: '2px solid black',
+        borderRadius: 4,
+        color: 'black',
+        padding: '8px 16px',
+        textAlign: 'center',
+        textDecoration: 'none',
+        display: 'inline-block',
+        fontSize: 16,
+        outline: 'none',
+        cursor: 'pointer'
       }
     }
 
