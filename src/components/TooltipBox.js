@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Textarea from 'react-textarea-autosize'
 
 class TooltipBox extends Component {
 
@@ -23,14 +24,14 @@ class TooltipBox extends Component {
 
     return (
       <div>
-        <textarea
+        <Textarea
           rows='4'
           cols='50'
           style={styles.textarea}
           value={this.props.command}
           readOnly
-          placeholder={`FFmpeg parameter explaination`}>
-        </textarea>
+          placeholder={`FFmpeg parameter explanation`}>
+        </Textarea>
       </div>
     )
   }
