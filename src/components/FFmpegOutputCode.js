@@ -14,7 +14,13 @@ class FFmpegOutputCommand extends Component {
   }
 
   showCopyAlert = () => {
-    this.msg.show('Copied', {
+    this.msg.show('FFmpeg command line copied to clipboard', {
+      type: 'success'
+    })
+  }
+
+  showEmailAlert = (dummy) => {
+    this.msg.show(`Email send to dummy@dummy.org`, {
       type: 'success'
     })
   }
@@ -34,6 +40,20 @@ class FFmpegOutputCommand extends Component {
         padding: '1em',
         width: 480,
         outline: 'none'
+      },
+      button: {
+        margin: '1em 0.5em',
+        backgroundColor: 'white',
+        border: '2px solid black',
+        borderRadius: 4,
+        color: 'black',
+        padding: '8px 16px',
+        textAlign: 'center',
+        textDecoration: 'none',
+        display: 'inline-block',
+        fontSize: 16,
+        outline: 'none',
+        cursor: 'pointer'
       }
     }
 
@@ -51,15 +71,15 @@ class FFmpegOutputCommand extends Component {
           <CopyToClipboard text={this.props.command}>
             <div>
               <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
-              <button onClick={this.showCopyAlert}>Copy</button>
+              <button onClick={this.showCopyAlert} style={styles.button}>Copy</button>
+              <button onClick={this.showEmailAlert} style={styles.button}>Email instruction</button>
+              <a
+                href='http://ffmpeg.org/download.html'
+                target='_blank'
+                rel='noopener noreferrer'
+                style={styles.button}>Download FFmpeg</a>
             </div>
           </CopyToClipboard>
-        <p>
-          Download FFmpeg binary <a
-            href='http://ffmpeg.org/download.html'
-            target='_blank'
-            rel='noopener noreferrer'>here</a>.
-        </p>
       </div>
     )
   }
