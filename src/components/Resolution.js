@@ -13,7 +13,6 @@ class Resolution extends Component {
 
   render() {
     const { resolution } = this.props
-    const TOOLTIP = 'Set output resolution in pixels.<br> For increased coding efficiency a mod16 resolution is preferred.'
 
     return (
       <div>

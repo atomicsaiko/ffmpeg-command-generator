@@ -22,8 +22,6 @@ class FileInput extends Component {
   }
 
   render() {
-    const TOOLTIP = 'Supported containers are MOV/MXF/MP4'
-
     return (
       <div>
         <label htmlFor='fileId'>Choose media file to inspect: {'\xa0'}</label>

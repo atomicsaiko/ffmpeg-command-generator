@@ -13,7 +13,13 @@ class FrameRate extends Component {
 
   render() {
     const { framerate } = this.props
-    const TOOLTIP = 'Set the output frame rate.<br> Note that this will perform frame rate conversion if source frame rate differs.'
+
+    let options = [
+      { value: '30000/1001', label: '29.970 fps' },
+      { value: '25', label: '25 fps' },
+      { value: '24', label: '24 fps' },
+      { value: '24000/1001', label: '24 fps' }
+    ];
 
     return (
       <div>
