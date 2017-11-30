@@ -5,6 +5,8 @@ import Resolution from '../components/Resolution'
 import FrameRate from '../components/FrameRate'
 import VideoCodec from '../components/VideoCodec'
 import FFmpegOutputCommand from '../components/FFmpegOutputCode'
+import TooltipBox from '../components/TooltipBox'
+import 'react-select-plus/dist/react-select-plus.css';
 
 class FFmpegForm extends Component {
 
@@ -34,15 +36,24 @@ class FFmpegForm extends Component {
   }
 
   render() {
+    const styles = {
+      div: {
+        maxWidth: 340,
+        margin: 'auto'
+      }
+    }
     return (
       <div>
+        <div style={styles.div}>
         <FileInput />
         <Resolution>
           <option value='640x360'>640x360</option>
         </Resolution>
         <FrameRate />
         <VideoCodec />
+      </div>
         <FFmpegOutputCommand command={this.generateFFmpegCMD()} />
+        <TooltipBox />
       </div>
     )
   }
