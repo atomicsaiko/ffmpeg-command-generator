@@ -22,9 +22,7 @@ class Resolution extends Component {
     return (
       <div>
         <strong>Resolution</strong>
-        <Select id='resolution' onChange={this.handleChange} value={resolution} options={options} >
-          {this.props.children}
-        </Select>
+        <Select id='resolution' onChange={this.handleChange} value={resolution} options={options} />
       </div>
     )
   }
