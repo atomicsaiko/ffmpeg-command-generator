@@ -3,29 +3,31 @@ import FontAwesome from 'react-fontawesome'
 import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateResolution from '../actions/resolution/update'
+import Select from 'react-select-plus';
 
 class Resolution extends Component {
 
-  handleChange = (event) => {
+  handleChange = (e) => {
     const { updateResolution } = this.props
-    updateResolution(event.target.value)
+    updateResolution(e.value)
   }
 
   render() {
     const { resolution } = this.props
 
+    let options = [
+      { value: '1920x1080', label: '1920x1080' },
+      { value: '1280x720', label: '1280x720' },
+      { value: '768x432', label: '768x432' },
+    ];
+
     return (
       <div>
-        Resolution: {'\xa0'}
-        <select id='resolution' onChange={this.handleChange} value={resolution}>
-          <option label=' '></option>
-          <option value='1920x1080'>1920x1080</option>
-          <option value='1280x720'>1280x720</option>
-          <option value='768x432'>768x432</option>
+        <strong>Resolution</strong>
+        <Select id='resolution' onChange={this.handleChange} value={resolution} options={options} >
           {this.props.children}
-        </select>
-        <FontAwesome name='info-circle' data-tip={TOOLTIP} />
-        <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
+        </Select>
+        {/* <ReactTooltip place="right" type="info" effect="solid" multiline={true} /> */}
       </div>
     )
   }

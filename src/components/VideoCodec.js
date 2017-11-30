@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
 import { connect } from 'react-redux'
 import updateVideoCodec from '../actions/videocodec/update'
+import Select from 'react-select-plus';
 
 class VideoCodec extends Component {
 
-  handleChange = (event) => {
+  handleChange = (e) => {
     const { updateVideoCodec } = this.props
-    updateVideoCodec(event.target.value)
+    updateVideoCodec(e.value)
   }
 
   render() {
     const { videocodec } = this.props
 
+    let options = [
+      { value: 'libx264', label: 'H.264/AVC' },
+      { value: 'libx265', label: 'H.265/HEVC' },
+      { value: 'proreshq', label: 'Apple ProRes HQ 422' },
+      { value: 'mpeg2encoder', label: 'MPEG-2' }
+    ];
+
     return (
       <div>
-        Video codec: {'\xa0'}
-        <select id='framerate' onChange={this.handleChange} value={videocodec}>
-          <option label=' '></option>
-          <option value='libx264'>H.264</option>
-          <option value='libx265'>H.265</option>
-          <option value='proreshq'>Apple ProRes HQ 422</option>
-          <option value='xdcamhd'>XDCAM HD422</option>
-        </select>
-        <FontAwesome name='info-circle' />
+        <strong>Video codec</strong>
+        <Select id='framerate' onChange={this.handleChange} value={videocodec} options={options} />
         {this.props.children}
       </div>
     )
