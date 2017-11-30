@@ -18,7 +18,10 @@ class FileInput extends Component {
         'border': '1px solid #aaa',
         'borderRadius': '4px',
         'textAlign': 'center',
-        'lineHeight': 2
+        'lineHeight': 2,
+        'whiteSpace': 'nowrap',
+        'overflow': 'hidden',
+        'textOverflow': 'ellipsis'
       },
       'button': {
         'float': 'right',
@@ -35,7 +38,7 @@ class FileInput extends Component {
       <div>
         <strong>Input file</strong>
         <div style={styles.div}>
-          <ReactFileReader handleFiles={this.handleFiles}>
+          <ReactFileReader fileTypes='video/*' handleFiles={this.handleFiles}>
             {this.props.fileinput}
             <button style={styles.button}>Select</button>
           </ReactFileReader>
