@@ -17,7 +17,7 @@ class FrameRate extends Component {
       { value: '30000/1001', label: '29.970 fps' },
       { value: '25', label: '25 fps' },
       { value: '24', label: '24 fps' },
-      { value: '24000/1001', label: '24 fps' }
+      { value: '24000/1001', label: '23.976 fps' }
     ];
 
     return (
