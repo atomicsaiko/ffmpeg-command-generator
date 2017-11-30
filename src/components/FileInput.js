@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
-import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateFileInput from '../actions/fileinput/update'
 
@@ -32,8 +30,6 @@ class FileInput extends Component {
           accept='.mov, .mxf, .mp4'
           onChange={this.handleChange}
         />
-        <FontAwesome name='info-circle' data-tip={TOOLTIP}/>
-        <ReactTooltip place="right" type="info" effect="solid" multiline={true} />
       </div>
     )
   }

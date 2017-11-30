@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
-import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateFrameRate from '../actions/framerate/update'
 import Select from 'react-select-plus';
@@ -26,7 +24,6 @@ class FrameRate extends Component {
       <div>
         <strong>Frame rate</strong> {'\xa0'}
         <Select id='framerate' onChange={this.handleChange} value={framerate} options={options} />
-        {/* <ReactTooltip place="right" type="info" effect="solid" multiline={true} /> */}
         {this.props.children}
       </div>
     )

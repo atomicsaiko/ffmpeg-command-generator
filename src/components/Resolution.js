@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import FontAwesome from 'react-fontawesome'
-import ReactTooltip from 'react-tooltip'
 import { connect } from 'react-redux'
 import updateResolution from '../actions/resolution/update'
 import Select from 'react-select-plus';
@@ -27,7 +25,6 @@ class Resolution extends Component {
         <Select id='resolution' onChange={this.handleChange} value={resolution} options={options} >
           {this.props.children}
         </Select>
-        {/* <ReactTooltip place="right" type="info" effect="solid" multiline={true} /> */}
       </div>
     )
   }
