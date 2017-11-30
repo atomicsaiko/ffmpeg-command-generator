@@ -1,35 +1,45 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import updateFileInput from '../actions/fileinput/update'
+import ReactFileReader from 'react-file-reader';
 
 class FileInput extends Component {
 
-  handleChange = (event) => {
+  handleFiles = files => {
     const { updateFileInput } = this.props
-    updateFileInput(this.validateFileInput(event.target.value))
-  }
-
-  validateFileInput = (fileinput) => {
-    if (fileinput.search('/') !== -1) {
-      let filename = fileinput.split('/')
-      return filename[filename.length-1]
-    } else {
-      let filename = fileinput.split('\\')
-      return filename[filename.length-1]
-    }
+    updateFileInput(files[0].name)
   }
 
   render() {
+    const styles = {
+      'div': {
+        'width': '100%',
+        'height': 34,
+        'border': '1px solid #aaa',
+        'borderRadius': '4px',
+        'textAlign': 'center',
+        'lineHeight': 2
+      },
+      'button': {
+        'float': 'right',
+        'fontSize': 16,
+        'height': 34,
+        'background': '#fff',
+        'border': '2px solid #000',
+        'outline': 'none',
+        'cursor': 'pointer'
+      }
+    }
+
     return (
       <div>
-        <label htmlFor='fileId'>Choose media file to inspect: {'\xa0'}</label>
-        <input
-          id='fileId'
-          name='fileId'
-          type='file'
-          accept='.mov, .mxf, .mp4'
-          onChange={this.handleChange}
-        />
+        <strong>Input file</strong>
+        <div style={styles.div}>
+          <ReactFileReader handleFiles={this.handleFiles}>
+            {this.props.fileinput}
+            <button style={styles.button}>Select</button>
+          </ReactFileReader>
+        </div>
       </div>
     )
   }
